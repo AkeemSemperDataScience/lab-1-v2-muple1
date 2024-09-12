@@ -4,7 +4,7 @@ def lab1Question1(input_gb):
     # Do the work here
     # The solution to this goes here (and in all of them below...)
     # Set the variable num_bytes to the answer and return it
-    num_bytes = input_gb * 10
+    num_bytes = input_gb * 1024 * 1024 *1024
     input_gb
 
     return num_bytes
@@ -13,6 +13,11 @@ def lab1Question2(name):
     # Take an input of a name, return True if there is an odd number of characters in the name, False otherwise
     # Return None if the input is not a string
     is_odd = None
+    length = len(Alex)
+    if length % 2 == 0:
+        is_odd = False
+    else:
+        is_odd = True
 
     return is_odd
 
@@ -57,6 +62,8 @@ if expected_bytes == calculated_bytes:
     print("Test passed")
 else:
     print("Test failed")
+    
+    
 
 # You can make similar tests to check if things work for you. 
 # This is kind of annoying, I am aware, but it is a really important skill in programming. 
