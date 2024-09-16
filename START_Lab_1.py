@@ -14,6 +14,10 @@ def lab1Question2(name):
     # Return None if the input is not a string
     is_odd = None
     length = len(name)
+
+    if not isinstance(name, str) or name == "":
+        return None
+    
     if length % 2 == 0:
         is_odd = False
     else:
@@ -91,7 +95,7 @@ if result_list == expected_list:
 else:
     print("failed")
 
-
+print(lab1Question2(""))    
 
 # You can make similar tests to check if things work for you. 
 # This is kind of annoying, I am aware, but it is a really important skill in programming. 
