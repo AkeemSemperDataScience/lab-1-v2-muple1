@@ -13,7 +13,7 @@ def lab1Question2(name):
     # Take an input of a name, return True if there is an odd number of characters in the name, False otherwise
     # Return None if the input is not a string
     is_odd = None
-    length = len(Alex)
+    length = len(name)
     if length % 2 == 0:
         is_odd = False
     else:
@@ -25,6 +25,12 @@ def lab1Question3(input_string, input_number):
     # Take in two inputs - a string and a number
     # Return the character of the string in the index given by number.  If this index does not exist, then return -1.
     character_at = -1
+    
+    if input_number < len(input_string):
+        print(input_string[input_number])
+    else:
+        print(character_at)
+   
 
     return character_at
 
@@ -33,12 +39,26 @@ def lab1Question4(file_name):
     # Read that file and return a list of all numbers in that file
     list_of_nums = []
 
+    with open (file_name, "r") as file:
+        for line in file:
+            for numbers in line.split():
+                if numbers.isdigit():
+                    list_of_nums.append(int(numbers))
+        
+
     return list_of_nums
 
 def lab1Question5(list_numbers):
     # Take an input of a list of numbers
     # Return the mode from that list. 
     mode_of_list = None
+    frequency_dict = {}
+
+    for number in list_numbers:
+        frequency_dict[num] = frequency_dict.get(num, 0) + 1
+
+    mode_of_list = max(frequency_dict, key=frequency_dict.get)
+       
 
     return mode_of_list
 
@@ -46,7 +66,11 @@ def lab1Question6(quarters, dimes, nickels, pennies):
     # Take in 4 inputs - the number of quarters, dimes, nickels, and pennies in a handful
     # Return the total amount in dollars
     # For example, if the handful contains 4 quarters, 3 dimes, 2 nickels, and 1 penny, the function should return 1.41.
+    
     total = None
+    total = (quarters * 0.25) + (dimes * 0.1) + (nickels * 0.05) + (pennies * 0.01)
+    
+
     return total
 
 ## Example of calling a function to test these... 
@@ -54,16 +78,23 @@ def lab1Question6(quarters, dimes, nickels, pennies):
 in_gb = 10
 expected_bytes = 10*1024*1024*1024
 calculated_bytes = lab1Question1(in_gb)
-
-print("Input gigabytes: ", in_gb)
-print("Expected bytes: ", expected_bytes)
-print("Calculated bytes: ", calculated_bytes)
-if expected_bytes == calculated_bytes:
-    print("Test passed")
+if calculated_bytes == expected_bytes:
+    print("test passed")
 else:
-    print("Test failed")
-    
-    
+    print("failed")
+
+
+
+
+
+result_list = lab1Question4("github/test_file1.txt")
+expected_list = [1, 2, 3, 4, 5]
+if result_list == expected_list:
+    print("test passed")
+else:
+    print("failed")
+
+
 
 # You can make similar tests to check if things work for you. 
 # This is kind of annoying, I am aware, but it is a really important skill in programming. 
