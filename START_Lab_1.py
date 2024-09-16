@@ -55,7 +55,7 @@ def lab1Question5(list_numbers):
     frequency_dict = {}
 
     for number in list_numbers:
-        frequency_dict[num] = frequency_dict.get(num, 0) + 1
+        frequency_dict[number] = frequency_dict.get(number, 0) + 1
 
     mode_of_list = max(frequency_dict, key=frequency_dict.get)
        
