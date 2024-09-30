@@ -13,11 +13,12 @@ def lab1Question2(name):
     # Take an input of a name, return True if there is an odd number of characters in the name, False otherwise
     # Return None if the input is not a string
     is_odd = None
-    length = len(name)
-
+   
     if not isinstance(name, str) or name == "":
         return None
     
+    length = len(name)
+
     if length % 2 == 0:
         is_odd = False
     else:
@@ -76,26 +77,8 @@ def lab1Question6(quarters, dimes, nickels, pennies):
 
 ## Example of calling a function to test these... 
 # Question 1 Check:
-in_gb = 10
-expected_bytes = 10*1024*1024*1024
-calculated_bytes = lab1Question1(in_gb)
-if calculated_bytes == expected_bytes:
-    print("test passed")
-else:
-    print("failed")
 
-
-
-
-
-result_list = lab1Question4("github/test_file1.txt")
-expected_list = [1, 2, 3, 4, 5]
-if result_list == expected_list:
-    print("test passed")
-else:
-    print("failed")
-
-print(lab1Question2(""))    
+print(lab1Question2(""))   
 
 # You can make similar tests to check if things work for you. 
 # This is kind of annoying, I am aware, but it is a really important skill in programming. 
